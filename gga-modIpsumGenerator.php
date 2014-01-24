@@ -1,93 +1,83 @@
 <?php
-/*
-Class: Bacon Ipsum Generator
-Author: Pete Nelson (@GunGeekATX)
-Version: 2.1.5
 
-Revision History
 
-= v2.1.1 October 18, 2012 =
-* Added doner (http://en.wikipedia.org/wiki/Doner_kebab)
-
-= v2.1 July 21, 2012 =
-* Changed the Make_Some_Meaty_Filler() function to return an array of paragraphs, added default parameters
-* Added support for individual sentences
-* Added more randomness to commas in a sentence.  Instead of always adding a
-  comma to a sentence with seven or more words, it will add one about 2/3rds of the time.
-
-= v2.0 July 14, 2012 =
-* First public release
-
-*/
-
-class BaconIpsumGenerator {
+class modIpsumGenerator {
 
 	function GetWords($type) {
 
 
-		$meat = array(
-			'beef',
-			'chicken',
-			'pork',
-			'bacon',
-			'chuck',
-			'short loin',
-			'sirloin',
-			'shank',
-			'flank',
-			'sausage',
-			'pork belly',
-			'shoulder',
-			'cow',
-			'pig',
-			'ground round',
-			'hamburger',
-			'meatball',
-			'tenderloin',
-			'strip steak',
-			't-bone',
-			'ribeye',
-			'shankle',
-			'tongue',
-			'tail',
-			'pork chop',
-			'pastrami',
-			'corned beef',
-			'jerky',
-			'ham',
-			'fatback',
-			'ham hock',
-			'pancetta',
-			'pork loin',
-			'short ribs',
-			'spare ribs',
-			'beef ribs',
-			'drumstick',
-			'tri-tip',
-			'ball tip',
-			'venison',
-			'turkey',
-			'biltong',
-			'rump',
-			'jowl',
-			'salami',
-			'bresaola',
-			'meatloaf',
-			'brisket',
-			'boudin',
+		$cute = array(
+			'glitter',
+			'BFF',
+			'sparkle',
+			'DIY',
+			'classic',
+			'flair',
+			'dazzling',
+			'vintage-inspired',
+			'kitten',
+			'knee-high',
+			'aborbs',
+			'sleek',
+			'paisley',
+			'fungi',
+			'polka dots',
+			'glam',
+			'coach tour',
+			'unique',
+			'fave',
+			'couture',
+			'mint',
+			'houndstooth',
+			'profesh',
+			'trending',
+			'kitschy',
+			'twinkle',
+			'Orla Kiely',
+			'clogs',
+			'Eva Franco',
+			'bubblegum',
+			'nautical',
+			'adorable',
+			'novelty',
+			'booties',
+			'fab',
+			'deco',
+			'puppies',
+			'fit and flar',
+			'fishnets',
+			'sweetheart',
+			'savvy',
+			'beach blanket bingo',
+			'maxi',
+			'windy city',
+			'rompers',
+			'pumps',
+			'gnomes',
+			'floral',
+			'mustaches',
 			'andouille',
 			'capicola',
 			'swine',
-			'kielbasa',
-			'frankfurter',
-			'prosciutto',
-			'filet mignon',
-			'leberkas',
-			'turducken',
-			'doner',
-			'kevin',
-			'landjaeger',
-			'porchetta'
+			'foxes',
+			'leggings',
+			'critters',
+			'style gallery',
+			'mid-century',
+			'hashtag',
+			'exclusive',
+			'sangria',
+			'mason jar',
+			'frocks',
+			'cozy',
+			'cupcakes',
+			'Mad Men',
+			'haute',
+			'enchanting',
+			'stunning',
+			'Pusheen',
+			'garb',
+			'Pinterest'
 		);
 
 		$filler = array(
@@ -157,10 +147,10 @@ class BaconIpsumGenerator {
 				'laborum');
 
 
-		if ($type == 'meat-and-filler')
-			$words = array_merge($meat, $filler);
+		if ($type == 'cute-and-filler')
+			$words = array_merge($cute, $filler);
 		else
-			$words = $meat;
+			$words = $cute;
 
 
 		shuffle($words);
@@ -226,8 +216,8 @@ class BaconIpsumGenerator {
 
 	}
 
-	public function Make_Some_Meaty_Filler(
-		$type = 'meat-and-filler',
+	public function Make_Some_cutey_Filler(
+		$type = 'cute-and-filler',
 		$number_of_paragraphs = 5,
 		$start_with_lorem = true,
 		$number_of_sentences = 0) {
@@ -249,7 +239,7 @@ class BaconIpsumGenerator {
 
 			if ($i == 0 && $start_with_lorem && count($words) > 0) {
 				$words[0] = strtolower($words[0]);
-				$words = 'Bacon ipsum dolor sit amet ' . $words;
+				$words = 'mod ipsum dolor sit amet ' . $words;
 			}
 
 			$paragraphs[]  = rtrim($words);
@@ -262,3 +252,5 @@ class BaconIpsumGenerator {
 
 
 }
+
+?>

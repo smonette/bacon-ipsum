@@ -1,16 +1,9 @@
 <?php
-/*
-Plugin Name: Bacon Ipsum - API
-Description: Handles incoming API requests
-Plugin URI: https://github.com/petenelson/bacon-ipsum
-Version: 2.1.4
-Author: Pete Nelson (@GunGeekATX)
-Author URI: http://petenelson.com
-*/
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class GGA_Bacon_Ipsum_API {
+class GGA_mod_Ipsum_API {
 	
 	function __construct() {
 		add_action('posts_selection', array(&$this, 'api'));
@@ -20,9 +13,9 @@ class GGA_Bacon_Ipsum_API {
 
 		if (is_page('api') && isset($_REQUEST['type'])) { 
 		
-			require_once 'gga-BaconIpsumGenerator.php';
+			require_once 'gga-modIpsumGenerator.php';
 			
-			$generator = new BaconIpsumGenerator();
+			$generator = new modIpsumGenerator();
 			$number_of_sentences = 0;
 			$number_of_paragraphs = 5;
 	
@@ -45,7 +38,7 @@ class GGA_Bacon_Ipsum_API {
 	
 			$start_with_lorem = isset($_REQUEST["start-with-lorem"]) && $_REQUEST["start-with-lorem"] == "1";
 	
-			$paras = $generator->Make_Some_Meaty_Filler(
+			$paras = $generator->Make_Some_cutey_Filler(
 				filter_var($_REQUEST["type"], FILTER_SANITIZE_STRING), 
 				$number_of_paragraphs, 
 				$start_with_lorem, 
@@ -71,4 +64,7 @@ class GGA_Bacon_Ipsum_API {
 }
 
 
-new GGA_Bacon_Ipsum_API();
+new GGA_mod_Ipsum_API();
+
+
+?>
